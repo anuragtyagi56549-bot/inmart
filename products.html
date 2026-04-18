@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css"/>
+
+  <title>Products</title>
+</head>
+
+<body>
+
+  <!-- NAVBAR (same as index) -->
+  <header class="section-navbar">
+    <section class="top_txt">
+      <div class="head container">
+        <p>Free shipping, 30-day return or refund guarantee.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="navbar-brand">
+        <a href="index.html">
+          <img src="./public/images/logo.png" class="logo">
+        </a>
+      </div>
+
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html" class="nav-link">home</a></li>
+          <li><a href="about.html" class="nav-link">about</a></li>
+          <li><a href="products.html" class="nav-link">products</a></li>
+          <li><a href="contact.html" class="nav-link">contact</a></li>
+
+          <!-- CART -->
+          <li>
+            <a href="addToCart.html" class="nav-link add-to-cart-button" id="cartValue">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span id="cartCountLabel">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PRODUCTS SECTION -->
+  <section class="section-products">
+    <h2 class="section-common-heading"
+    style="
+        background: linear-gradient(to right, #3d86fa, #679eff);
+        color: white;
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 3rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    ">
+  All Products
+</h2>
+
+    <div class="container">
+      <div id="productContainer"></div>
+    </div>
+  </section>
+
+  <!-- TEMPLATE (IMPORTANT - same as index) -->
+    <template id="productTemplate">
+      <div class="cards" id="cardValue">
+        <article class="information [card]">
+          <span class="category"></span>
+          <div class="imageContainer">
+            <img class="productImage" src="" alt="">
+          </div>
+          <h2 class="productName"></h2>
+
+          <div class="productRating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+
+          <p class="productDescription"></p>
+
+          <div class="productPriceElement">
+            <p class="productPrice"></p>
+            <p class="productActualPrice"></p>
+          </div>
+
+          <div class="productQuantityElement">
+            <p class="productProperty">Quantity</p>
+            <div class="stockElement">
+              <button class="cartIncrement">+</button>
+              <p class="productQuantity">1</p>
+              <button class="cartDecrement">-</button>
+            </div>
+          </div>
+          <button class="add-to-cart-button">
+            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+          </button>
+        </article>
+      </div>
+    </template>
+
+          <section class="testimonial-section">
+  <h2 class="section-title">What Our Customers Say</h2>
+
+  <div class="testimonial-container">
+    <div class="testimonial-card">
+      <p>"Amazing quality and fast delivery!"</p>
+      <h4>- Rahul</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <p>"Best online store I’ve used."</p>
+      <h4>- Priya</h4>
+    </div>
+  </div>
+</section>
+
+  <!-- FOOTER (same as index) -->
+    <footer>
+      <div class="container">
+        <div class="footer-container grid grid-four--cols">
+
+          <!-- Column 1 -->
+          <div class="content_1">
+            <img src="./public/images/logo.png" alt="logo">
+            <p>
+              Your one-stop destination for the latest gadgets, accessories, and tech products.
+              Shop with confidence and enjoy the best deals every day.
+            </p>
+
+            <div class="payment-icons">
+              <i class="fa-brands fa-cc-visa"></i>
+              <i class="fa-brands fa-cc-mastercard"></i>
+              <i class="fa-brands fa-cc-paypal"></i>
+              <i class="fa-brands fa-cc-amex"></i>
+            </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="content_2">
+            <h5>SHOPPING</h5>
+            <a href="#">Computer Store</a>
+            <a href="#">Laptop Store</a>
+            <a href="#">Accessories</a>
+            <a href="#">Sales & Discount</a>
+          </div>
+
+          <!-- Column 3 -->
+          <div class="content_3">
+            <h5>SUPPORT</h5>
+            <a href="#">Contact Us</a>
+            <a href="#">Payment Methods</a>
+            <a href="#">Shipping & Delivery</a>
+            <a href="#">Return & Exchange</a>
+          </div>
+
+          <!-- Column 4 -->
+          <div class="content_4">
+            <h5>NEWSLETTER</h5>
+            <p>
+              Subscribe to get updates on new arrivals, special offers, and exclusive discounts.
+            </p>
+
+            <div class="f-mail">
+              <input type="email" placeholder="Enter your email">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="f-design">
+        <div class="f-design-txt">
+          <p>© 2026 Instantmart. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+  <!-- JS (IMPORTANT) -->
+  <script type="module" src="main.js"></script>
+
+</body>
+</html>

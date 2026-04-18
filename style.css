@@ -1192,6 +1192,27 @@ footer {
 
 /*****  Add to Cart page ends *****/
 
+.testimonial-section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.testimonial-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
 /*****  media queries Section *****/
 
 /* https://getbootstrap.com/docs/5.0/layout/breakpoints/ */
@@ -1407,6 +1428,11 @@ footer {
     & .choose-left-div {
       text-align: left;
     }
+  }
+  
+  /* TESTIMONIAL */
+  .testimonial-card {
+    width: 90%;
   }
 
   .section-contact--homepage .btn {
@@ -1681,6 +1707,12 @@ button[onclick^="removeItem"]:hover {
   .cards{
     max-width: 100%;
   }
+
+    /* TESTIMONIAL */
+  .testimonial-card {
+    width: 100%;
+  }
+
 
   .footer-container{
     grid-template-columns: 1fr;
