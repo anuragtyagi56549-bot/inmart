@@ -4,7 +4,7 @@
     "name": "Laptop",
     "category": "Computers",
     "brand": "ExampleBrand",
-    "price": 999.99,
+    "price": 99999.99,
     "description": "Powerful laptop with a quad-core i5 processor, 8GB RAM, 256GB SSD, and a 14-inch FHD display.",
     "image":"./public/images/laptop.jpg"
   },
@@ -13,7 +13,7 @@
     "name": "Smartphone",
     "category": "Mobiles",
     "brand": "TechNova",
-    "price": 699.99,
+    "price": 69999.99,
     "description": "Sleek smartphone with 5G support, 128GB storage, and a high-resolution camera.",
     "image":"./public/images/mobile.jpg"
   },
@@ -22,7 +22,7 @@
     "name": "Headphones",
     "category": "Accessories",
     "brand": "SoundMax",
-    "price": 199.99,
+    "price": 1999.99,
     "description": "Wireless noise-cancelling headphones with long battery life.",
     "image": "./public/images/headphone.jpg"
   },
@@ -31,7 +31,7 @@
     "name": "Smartwatch",
     "category": "Wearables",
     "brand": "FitPulse",
-    "price": 249.99,
+    "price": 2849.99,
     "description": "Smartwatch with fitness tracking, heart rate monitor, and water resistance.",
     "image": "./public/images/smartwatch.jpg"
   },
@@ -40,7 +40,7 @@
     "name": "Tablet",
     "category": "Computers",
     "brand": "TabWorld",
-    "price": 499.99,
+    "price": 40999.99,
     "description": "Lightweight tablet with 10-inch display, 64GB storage, and fast performance.",
     "image": "./public/images/tablet.jpg"
   },
@@ -49,7 +49,7 @@
     "name": "Gaming Mouse",
     "category": "Accessories",
     "brand": "ProGamer",
-    "price": 59.99,
+    "price": 599.99,
     "description": "Ergonomic gaming mouse with customizable buttons and RGB lighting.",
     "image": "./public/images/mouse.jpg"
   }

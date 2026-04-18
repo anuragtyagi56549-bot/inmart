@@ -4,37 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cart</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="addToCart.css" />
 </head>
 <body>
 
-  <header>
-    <h1 style="text-align:center;">Your Cart 🛒</h1>
-  </header>
+  <header class="top-bar">
+  <h2>← Cart</h2>
+</header>
 
-  <section class="container">
-    <div id="productCartContainer"></div>
+<div class="save-banner">
+  Yay! You saved ₹78 on this order ✔
+</div>
 
-    <div class="productCartTotalElem">
-      <div class="productCartTotalElement">
-        <div class="productOrderTotal">
-          <div>
-            <p>Subtotal</p>
-            <p class="productSubTotal">$0</p>
-          </div>
-          <div>
-            <p>Tax (10%)</p>
-            <p class="productTax">$0</p>
-          </div>
-          <div>
-            <p>Total</p>
-            <p class="productFinalTotal">$0</p>
-          </div>
-        </div>
-      </div>
-    </div>
+<section class="cart-box">
+  <div class="offer">
+    <span>🏷️ View Coupons & Offers</span>
+    <span>›</span>
+  </div>
 
-  </section>
+  <div class="delivery">
+    ⚡ Delivery in 6 mins
+  </div>
+
+  <div id="productCartContainer"></div>
+
+  <div class="add-more">
+    <span>Missed something?</span>
+    <button>+ Add More Items</button>
+  </div>
+</section>
+
+<section class="bill-box">
+  <h3>🧾 Bill summary</h3>
+
+  <div class="bill-row">
+    <span>Item Total</span>
+    <span class="productSubTotal">₹0</span>
+  </div>
+
+  <div class="bill-row">
+    <span>Handling Fee</span>
+    <span class="handling">FREE</span>
+  </div>
+
+  <div class="bill-row">
+    <span>Delivery Fee</span>
+    <span class="deliveryFee">₹30</span>
+  </div>
+
+  <hr>
+
+  <div class="bill-row total">
+    <span>To Pay</span>
+    <span class="productFinalTotal">₹0</span>
+  </div>
+</section>
+
+<div class="checkout-bar">
+  Add Address to proceed
+</div>
 
   <script src="cart.js"></script>
 </body>

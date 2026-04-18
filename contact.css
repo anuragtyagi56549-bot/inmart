@@ -1,0 +1,115 @@
+/* HERO */
+.contact-hero {
+  background: linear-gradient(
+    to top right,
+    #3d86fa,
+    #679eff,
+    #b3d2ff
+  );
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.contact-hero h1 {
+  font-size: 4rem;
+}
+
+.contact-hero p {
+  font-size: 1.6rem;
+}
+
+.contact-info,
+.contact-form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* GRID */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch; /* 🔥 important */
+}
+
+/* LEFT INFO */
+.contact-info {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-info h2 {
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  font-size: 1.6rem;
+}
+
+.contact-info i {
+  color: #3b82f6;
+  margin-right: 10px;
+}
+
+/* SOCIAL */
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons i {
+  font-size: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* FORM */
+.contact-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.contact-form button {
+  width: 100%;
+}
+
+/* MAP */
+.map-section iframe {
+  width: 100%;
+  height: 300px;
+  margin-top: 40px;
+  border: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-hero h1 {
+    font-size: 3rem;
+  }
+
+}

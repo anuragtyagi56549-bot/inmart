@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const clone = template.content.cloneNode(true);
         
         clone.querySelector(".productName").textContent = product.name;
-        clone.querySelector(".productPrice").textContent = `$${product.price}`;
+        clone.querySelector(".productPrice").textContent = `₹${product.price}`;
         clone.querySelector(".productImage").src = product.image; // ⭐ IMPORTANT
 
         container.appendChild(clone);
@@ -25,7 +25,8 @@ document.getElementById("productContainer").addEventListener("click", (e) => {
     let product = {
       name: card.querySelector(".productName").innerText,
       // Use parseFloat to ensure the price is a number for calculations later
-      price: parseFloat(card.querySelector(".productPrice").innerText.replace("$", "")),
+     price: parseFloat(
+      card.querySelector(".productPrice").innerText.replace("₹", "")),
       image: card.querySelector(".productImage").src,
       // Ensure the quantity element exists in your HTML template
       quantity: parseInt(card.querySelector(".productQuantity")?.innerText || 1),
@@ -54,6 +55,7 @@ function updateCartCount() {
     // Ensure item.quantity is treated as a number
     return total + (Number(item.quantity) || 0);
   }, 0);
+  
   
   const countLabel = document.getElementById("cartCountLabel");
   if (countLabel) {
