@@ -14,7 +14,7 @@ if (registerForm) {
     console.log({ Username, email, password }); // 👈 check values
 
     try {
-      const response = await fetch("http://localhost:5000/register", {
+      const response = await fetch("https://inmart-1.onrender.com/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -48,7 +48,7 @@ if (loginForm) {
     const password = document.getElementById("password").value;
 
     try {
-      const response = await fetch("http://localhost:5000/login", {
+      const response = await fetch("https://inmart-1.onrender.com/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
