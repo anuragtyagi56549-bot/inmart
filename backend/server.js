@@ -64,9 +64,9 @@ app.post("/register", async (req, res) => {
         res.json({ message: "User Registered Successfully" });
 
     } catch (error) {
-        console.log(error);
-        res.json({ message: "Server error" });
-    }
+    console.log("FULL ERROR:", error);
+    res.json({ message: error.message });
+}
 });
 
 
@@ -90,9 +90,9 @@ app.post("/login", async (req, res) => {
         res.json({ message: "Login successful" });
 
     } catch (error) {
-        console.log(error);
-        res.json({ message: "Server error" });
-    }
+    console.log("FULL ERROR:", error);
+    res.json({ message: error.message });
+}
 });
 
 
