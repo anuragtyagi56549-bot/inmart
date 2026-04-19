@@ -1,3 +1,7 @@
+console.log("Server starting...");
+require("dotenv").config();
+console.log("MONGO_URI:", process.env.MONGO_URI);
+
 // 1. IMPORTS
 const express = require("express");
 const mongoose = require("mongoose");
@@ -16,8 +20,12 @@ app.use(express.json());
 
 // 3. DATABASE CONNECTION
 mongoose.connect(process.env.MONGO_URI)
-.then(() => console.log("MongoDB Connected"))
-.catch(err => console.log(err));
+.then(() => {
+    console.log("MongoDB Connected ✅");
+})
+.catch((err) => {
+    console.log("MongoDB Error ❌:", err);
+});
 
 
 // 4. SCHEMA
