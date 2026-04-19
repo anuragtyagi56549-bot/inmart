@@ -1,17 +1,33 @@
-import express from "express";
-import mongoose from "mongoose";
-import cors from "cors";
-import bcrypt from "bcryptjs";
+console.log("Server starting...");
+require("dotenv").config();
+console.log("MONGO_URI:", process.env.MONGO_URI);
+
+// 1. IMPORTS
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const bcrypt = require("bcryptjs");
 
 const app = express();
 
-app.use(cors());
+// 2. MIDDLEWARE
+app.use(cors({
+  origin: "*"
+}));
 app.use(express.json());
 
-mongoose.connect("mongodb+srv://anuragtyagi56549_db_user:ndMDGReepb7XmAhx@instantmart.yg8dtpv.mongodb.net/instantmart")
-.then(() => console.log("MongoDB Connected"))
-.catch(err => console.log(err));
 
+// 3. DATABASE CONNECTION
+mongoose.connect(process.env.MONGO_URI)
+.then(() => {
+    console.log("MongoDB Connected ✅");
+})
+.catch((err) => {
+    console.log("MongoDB Error ❌:", err);
+});
+
+
+// 4. SCHEMA
 const UserSchema = new mongoose.Schema({
     Username: String,
     email: String,
@@ -20,36 +36,17 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", UserSchema);
 
-app.post("/login", async (req, res) => {
-    const { Username, password } = req.body;
 
-    console.log("LOGIN HIT:", req.body); // 👈 debug
+// 5. ROUTES
 
-    try {
-        const user = await User.findOne({ Username });
-
-        if (!user) {
-            return res.json({ message: "User not found" });
-        }
-
-        const isMatch = await bcrypt.compare(password, user.password);
-
-        if (!isMatch) {
-            return res.json({ message: "Invalid password" });
-        }
-
-        res.json({ message: "Login successful" });
-
-    } catch (error) {
-        console.log(error);
-        res.json({ message: "Server error" });
-    }
-});
+// Register
 app.post("/register", async (req, res) => {
-    console.log("API HIT ✅");   
-    console.log(req.body);       
-
     const { Username, email, password } = req.body;
+
+    // ✅ ADD THIS
+    if (!Username || !email || !password) {
+        return res.json({ message: "All fields are required" });
+    }
 
     try {
         const existingUser = await User.findOne({ Username });
@@ -71,19 +68,45 @@ app.post("/register", async (req, res) => {
         res.json({ message: "User Registered Successfully" });
 
     } catch (error) {
-        res.json({ message: "Error registering user" });
+        console.log("FULL ERROR:", error);
+        res.json({ message: error.message });
     }
 });
 
-const users = await User.find();
-console.log(users);
+// Login
+app.post("/login", async (req, res) => {
+    const { Username, password } = req.body;
 
-const existingUser = await User.findOne({ Username });
+    // ✅ ADD THIS
+    if (!Username || !password) {
+        return res.json({ message: "All fields are required" });
+    }
 
-if (existingUser) {
-    return res.json({ message: "User already exists" });
-}
+    try {
+        const user = await User.findOne({ Username });
 
-app.listen(5000, () => {
-    console.log("Server running on port 5000");
+        if (!user) {
+            return res.json({ message: "User not found" });
+        }
+
+        const isMatch = await bcrypt.compare(password, user.password);
+
+        if (!isMatch) {
+            return res.json({ message: "Invalid password" });
+        }
+
+        res.json({ message: "Login successful" });
+
+    } catch (error) {
+        console.log("FULL ERROR:", error);
+        res.json({ message: error.message });
+    }
+});
+
+
+// 6. START SERVER (👉 ALWAYS LAST)
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log("Server running on port " + PORT);
 });

@@ -78,11 +78,6 @@ app.post("/register", async (req, res) => {
 const users = await User.find();
 console.log(users);
 
-const existingUser = await User.findOne({ Username });
-
-if (existingUser) {
-    return res.json({ message: "User already exists" });
-}
 
 app.listen(5000, () => {
     console.log("Server running on port 5000");
