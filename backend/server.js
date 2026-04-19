@@ -7,7 +7,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const bcrypt = require("bcryptjs");
-require("dotenv").config();
 
 const app = express();
 
@@ -44,6 +43,11 @@ const User = mongoose.model("User", UserSchema);
 app.post("/register", async (req, res) => {
     const { Username, email, password } = req.body;
 
+    // ✅ ADD THIS
+    if (!Username || !email || !password) {
+        return res.json({ message: "All fields are required" });
+    }
+
     try {
         const existingUser = await User.findOne({ Username });
 
@@ -64,15 +68,19 @@ app.post("/register", async (req, res) => {
         res.json({ message: "User Registered Successfully" });
 
     } catch (error) {
-    console.log("FULL ERROR:", error);
-    res.json({ message: error.message });
-}
+        console.log("FULL ERROR:", error);
+        res.json({ message: error.message });
+    }
 });
-
 
 // Login
 app.post("/login", async (req, res) => {
     const { Username, password } = req.body;
+
+    // ✅ ADD THIS
+    if (!Username || !password) {
+        return res.json({ message: "All fields are required" });
+    }
 
     try {
         const user = await User.findOne({ Username });
@@ -90,9 +98,9 @@ app.post("/login", async (req, res) => {
         res.json({ message: "Login successful" });
 
     } catch (error) {
-    console.log("FULL ERROR:", error);
-    res.json({ message: error.message });
-}
+        console.log("FULL ERROR:", error);
+        res.json({ message: error.message });
+    }
 });
 
 
