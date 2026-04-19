@@ -41,13 +41,9 @@ const User = mongoose.model("User", UserSchema);
 
 // Register
 app.post("/register", async (req, res) => {
-<<<<<<< Updated upstream
-=======
     console.log("BODY RECEIVED:", req.body); // 👈 ADD THIS       
 
->>>>>>> Stashed changes
     const { Username, email, password } = req.body;
-
     // ✅ ADD THIS
     if (!Username || !email || !password) {
         return res.json({ message: "All fields are required" });
